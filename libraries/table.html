@@ -57,19 +57,19 @@ HTML Table 類別
 
 <h1>HTML Table 類別</h1>
 
-<p>HTML Table類別賦與你能從陣列或是資料庫的回傳結果自動產生表格</p>
+<p>HTML Table 類別賦與你能從陣列或是資料庫的回傳結果自動產生表格</p>
 
 <h2>初始化類別</h2>
 
-<p>就像大多數在CI中的類別一樣，在控制器中初始化HTML Table類別使用 <dfn>$this->load->library</dfn> 函數:</p>
+<p>就像大多數在 CI 中的類別一樣，在控制器中初始化 HTML Table 類別使用 <dfn>$this->load->library</dfn> 函數:</p>
 
 <code>$this->load->library('table');</code>
-<p>載入之後，HTML Table類別可以這樣使用: <dfn>$this->table</dfn></p>
+<p>載入之後，HTML Table 類別可以這樣使用: <dfn>$this->table</dfn></p>
 
 
 <h2>範例</h2>
 
-<p>這個範例將告訴你如何以一個多維的陣列來建出一個表格內的欄位。陣列的第一個索引將會成為表格的標題(或是你可以在之後使用<dfn>set_heading()</dfn>函數來設定你想要的表格標題)</p>
+<p>這個範例將告訴你如何以一個多維的陣列來建出一個表格內的欄位。陣列的第一個索引將會成為表格的標題(或是你可以在之後使用 <dfn>set_heading()</dfn> 函數來設定你想要的表格標題)</p>
 
 <code>
 $this->load->library('table');<br />
@@ -84,7 +84,7 @@ $data = array(<br />
 echo $this->table->generate($data);
 </code>
 
-<p>這個範例是以資料庫的回傳結果來建立表格，並且自動的以資料表的名稱來作為表格的標題(或是你可以在之後使用<dfn>set_heading()</dfn>函數來設定你想要的表格標題)</p>
+<p>這個範例是以資料庫的回傳結果來建立表格，並且自動的以資料表的名稱來作為表格的標題(或是你可以在之後使用 <dfn>set_heading()</dfn> 函數來設定你想要的表格標題)</p>
 
 <code>
 $this->load->library('table');<br />
@@ -126,7 +126,7 @@ echo $this->table->generate();
 
 <h2>改變表格的外觀</h2>
 
-<p>HTML Table類別允許你使用指定的樣版，底下的範例是一個樣版的模型</p>
+<p>HTML Table 類別允許你使用指定的樣版，底下的範例是一個樣版的模型</p>
 
 <code>
 $tmpl =  array (<br />
@@ -154,7 +154,7 @@ $tmpl =  array (<br />
 $this->table->set_template($tmpl);
 </code>
 
-<p class="important"><strong>注意:</strong>&nbsp; 這個樣版擁有二個"row"的區塊，可以讓你在陳列資料時使用顏色交替互換</p>
+<p class="important"><strong>注意:</strong>&nbsp; 這個樣版擁有二個 "row" 的區塊，可以讓你在陳列資料時使用顏色交替互換</p>
 
 <p>如果你只是要改變樣版的部份樣式時，你可以簡單的提供幾個元素，而不需要提供整個樣版:</p>
 
@@ -169,7 +169,7 @@ $this->table->set_template($tmpl);
 <h1>函數參考</h1>
 
 <h2>$this->table->generate()</h2>
-<p>回傳所建立的Table</p>
+<p>回傳所建立的表格</p>
 
 <h2>$this->table->set_caption()</h2>
 
@@ -272,7 +272,7 @@ echo $this->table->generate();
 
 <h2>$this->table->function</h2>
 
-<p>指定一個PHP的原生函數或是一個有效的函數陣列物件給表格中的各個欄位</p>
+<p>指定一個 PHP 的原生函數或是一個有效的函數陣列物件給表格中的各個欄位</p>
 
 <code>$this->load->library('table');<br />
 <br />
@@ -282,7 +282,7 @@ $this->table->add_row('Fred', '&lt;strong&gt;Blue&lt;/strong&gt;', 'Small');<br 
 $this->table->function = 'htmlspecialchars';<br />
 echo $this->table->generate();<br />
 </code>
-在上述的範例中，各個欄位的內容都經過<dfn>htmlspecialchars()</dfn>函數
+在上述的範例中，各個欄位的內容都經過 <dfn>htmlspecialchars()</dfn> 函數
 <p>In the above example, all cell data would be ran through PHP's  function, resulting in:</p>
 
 <code>&lt;td&gt;Fred&lt;/td&gt;&lt;td&gt;&amp;lt;strong&amp;gt;Blue&amp;lt;/strong&amp;gt;&lt;/td&gt;&lt;td&gt;Small&lt;/td&gt;</code>
