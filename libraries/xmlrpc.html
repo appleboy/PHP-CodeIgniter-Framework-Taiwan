@@ -94,7 +94,7 @@ $this->load->library('xmlrpcs');
 <li>請求的內容</li>
 </ul>
 
-<p>底下是一個簡易的範例，從 Weblogs.com 發送的 ping 請求到 <a href="http://pingomatic.com/">Ping-o-Matic</a></p>
+<p>底下是一個簡易的範例，從 Weblogs.com 發送的 ping 的請求到 <a href="http://pingomatic.com/">Ping-o-Matic</a></p>
 
 
 <code>$this->load->library('xmlrpc');<br />
@@ -169,11 +169,11 @@ $this->xmlrpcs->serve();</code>
 
 <p>在 server 的函數名稱並無限制，你可以自行決定，假如你使用標準化的 API 例如: Blogger 或 MetaWeblog API ，你將會使用它們的函數名稱</p>
 
-<p>此外，在初始化 XML-RPC Server 類別時有二個配你或許會用到: <var>debug</var> 可以設定為 TRUE 來開啟除錯模式， <var>xss_clean</var> 設定為 FALSE 避免在傳送資料時會經過 Security 類別的 xss_clean 函數</p>
+<p>此外，在初始化 XML-RPC Server 類別時有二個配置你或許會用到: <var>debug</var> 可以設定為 TRUE 來開啟除錯模式， <var>xss_clean</var> 設定為 FALSE 避免在傳送資料時會經過 Security 類別的 xss_clean 函數</p>
 
 <h2>處理請求</h2>
 
-<p>當 server 接收到請求時是透過物件的方式來處理，在以上的範例中，當 <var>new_post</var> 這個函數被需求時，預期會出現以下的模型:</p>
+<p>server 透過物件的方式來處理請求，在以上的範例中，當 <var>new_post</var> 這個函數被需求時，預期會出現以下的模型:</p>
 
 <code>class <kbd>My_blog</kbd> extends CI_Controller {<br />
 <br />
@@ -184,7 +184,7 @@ $this->xmlrpcs->serve();</code>
 }
 </code>
 
-<p><var>$request</var> 這個變數是個由 server 編譯過的物件，它包含了從 client 所發出的請求，使用這個物你將有權利存取請求的變數並且處理它，當一切都處理完畢後將會發送回應告知 client</p>
+<p><var>$request</var> 這個變數是個由 server 編譯過的物件，它包含了從 client 所發出的請求，使用這個物件你將有權利存取請求的變數並且處理它，當一切都處理完畢後將會發送回應告知 client</p>
 
 <p>以下真實的範例，使用 Blogger API 中的 <dfn>getUserInfo()</dfn> 函數，client 將會向 server 傳送 username 與 password ，server 將會回傳特定使用者的資料(暱稱，使用者ID，電子信箱..等):</p>
 
@@ -349,7 +349,7 @@ class Xmlrpc_server extends CI_Controller {
 
 <p>你現在感該可以看見你發送到 server 的訊息，並且接收到回應</p>
 
-<p>你在 client 中發送("How's is going?")的訊息到 server 中，並且請求使用"Greetings"這個方法來處理，最後回傳了一個回應</p>
+<p>你在 client 中發送("How's is going?")的訊息到 server 中，並且請求使用"Greetings"這個方法來處理，最後傳回了一個回應</p>
 
 <h2>在請求的參數中使用關連式陣列</h2>
 
@@ -392,7 +392,7 @@ class Xmlrpc_server extends CI_Controller {
 <code>$this->xmlrpc->timeout(6);</code>
 
 <h2>$this->xmlrpc->method()</h2>
-<p>設定 XML-RPC  server 將會被呼叫到的方法:</p>
+<p>設定 server 將會被呼叫到的方法:</p>
 <code>$this->xmlrpc->method('<var>method</var>');</code>
 
 <p><var>method</var> 是指有一個函數叫作 method</p>
